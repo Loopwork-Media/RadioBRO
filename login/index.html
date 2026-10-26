@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login | RadioBRO</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <nav class="topbar">
+            <div class="brand">RadioBRO</div>
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a href="../about/">About</a>
+                <a href="../contact/">Contact</a>
+                <a class="active" href="./">Login</a>
+            </div>
+        </nav>
+
+        <main class="auth-page">
+            <section class="auth-shell">
+                <div class="auth-panel auth-copy">
+                    <p class="section-label">Your listening space</p>
+                    <h1>Listen. Share. Repeat.</h1>
+                    <p>Log in to pick up where you left off, follow your favourite stations, and keep your RadioBRO experience personal.</p>
+                    <ul class="auth-list">
+                        <li>Save favourite stations</li>
+                        <li>Track your community activity</li>
+                        <li>Keep your profile and listening history</li>
+                    </ul>
+                </div>
+
+                <div class="auth-panel auth-card">
+                    <div class="auth-tabs">
+                        <button class="tab is-active" type="button" data-tab="login">Login</button>
+                        <button class="tab" type="button" data-tab="signup">Sign Up</button>
+                    </div>
+
+                    <form class="auth-form is-visible" id="loginForm" action="#" method="post">
+                        <div class="field-group">
+                            <label for="login-email">Email</label>
+                            <input id="login-email" type="email" placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="login-password">Password</label>
+                            <input id="login-password" type="password" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="auth-meta">
+                            <label><input type="checkbox"> Remember me</label>
+                            <a href="#">Forgot password?</a>
+                        </div>
+
+                        <button class="primary-btn" type="submit">Log In</button>
+                    </form>
+
+                    <form class="auth-form" id="signupForm" action="#" method="post">
+                        <div class="field-group">
+                            <label for="signup-name">Full name</label>
+                            <input id="signup-name" type="text" placeholder="Your name" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="signup-email">Email</label>
+                            <input id="signup-email" type="email" placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="signup-password">Password</label>
+                            <input id="signup-password" type="password" placeholder="Create a password" required>
+                        </div>
+
+                        <button class="primary-btn" type="submit">Create Account</button>
+                    </form>
+
+                    <div class="auth-switch">
+                        <span>Need help? </span><a href="../contact/">Contact us</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const tabs = document.querySelectorAll('.tab');
+            const forms = document.querySelectorAll('.auth-form');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.dataset.tab;
+
+                    tabs.forEach(item => item.classList.toggle('is-active', item === tab));
+                    forms.forEach(form => {
+                        const activeFormId = target === 'login' ? 'loginForm' : 'signupForm';
+                        form.classList.toggle('is-visible', form.id === activeFormId);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
