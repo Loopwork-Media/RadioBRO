@@ -35,22 +35,48 @@
                     <h3>Let’s build something great together.</h3>
                     <p>Whether you want to ask a question, collaborate, or follow updates, we’re happy to hear from you.</p>
                 </article>
-                <article class="contact-form-card">
+                <form id="contactForm" class="contact-form-card">
                     <label>
                         <span>Your name</span>
-                        <input type="text" placeholder="Enter your name">
+                        <input id="name" name="name" type="text" placeholder="Enter your name" required>
                     </label>
                     <label>
                         <span>Email</span>
-                        <input type="email" placeholder="Enter your email">
+                        <input id="email" name="email" type="email" placeholder="Enter your email" required>
                     </label>
                     <label>
                         <span>Message</span>
-                        <textarea placeholder="Write your message..."></textarea>
+                        <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
                     </label>
-                    <button class="primary-btn" type="button">Send Message</button>
-                </article>
+                    <button class="primary-btn" type="submit">Send Message</button>
+                </form>
             </section>
         </main>
+
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !email || !message) {
+                    alert('Please fill in your name, email, and message before sending.');
+                    return;
+                }
+
+                const subject = encodeURIComponent('RadioBRO Contact Form: ' + name);
+                const body = encodeURIComponent(
+                    'Name: ' + name + '\n' +
+                    'Email: ' + email + '\n\n' +
+                    'Message:\n' + message
+                );
+
+                window.location.href = 'mailto:bengage2012@outlook.com?subject=' + subject + '&body=' + body;
+                this.reset();
+                alert('Your email app should open with the message ready to send to bengage2012@outlook.com.');
+            });
+        </script>
     </body>
 </html>
