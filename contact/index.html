@@ -35,22 +35,44 @@
                     <h3>Let’s build something great together.</h3>
                     <p>Whether you want to ask a question, collaborate, or follow updates, we’re happy to hear from you.</p>
                 </article>
-                <article class="contact-form-card">
+                <form id="contactForm" class="contact-form-card">
                     <label>
                         <span>Your name</span>
-                        <input type="text" placeholder="Enter your name">
-                    </label>
-                    <label>
-                        <span>Email</span>
-                        <input type="email" placeholder="Enter your email">
+                        <input id="name" name="name" type="text" placeholder="Enter your name" required>
                     </label>
                     <label>
                         <span>Message</span>
-                        <textarea placeholder="Write your message..."></textarea>
+                        <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
                     </label>
-                    <button class="primary-btn" type="button">Send Message</button>
-                </article>
+                    <button class="primary-btn" type="submit">Send Message</button>
+                </form>
             </section>
         </main>
+
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !message) {
+                    alert('Please fill in your name and message before sending.');
+                    return;
+                }
+
+                const token = Math.floor(1000 + Math.random() * 9000);
+                const recipient = 'loopworkl@outlook.com';
+                const subject = encodeURIComponent('Token ' + token);
+                const body = encodeURIComponent(
+                    'Name: ' + name + '\n\n' +
+                    'Message:\n' + message
+                );
+
+                window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+                this.reset();
+                alert('Your email app should open with the message ready to send to loopworkl@outlook.com.');
+            });
+        </script>
     </body>
 </html>
