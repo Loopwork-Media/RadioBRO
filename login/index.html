@@ -39,12 +39,12 @@
                     <form class="auth-form is-visible" id="loginForm" action="#" method="post">
                         <div class="field-group">
                             <label for="login-email">Email</label>
-                            <input id="login-email" type="email" placeholder="you@example.com" required>
+                            <input id="login-email" name="email" type="email" placeholder="you@example.com" required>
                         </div>
 
                         <div class="field-group">
                             <label for="login-password">Password</label>
-                            <input id="login-password" type="password" placeholder="Enter your password" required>
+                            <input id="login-password" name="password" type="password" placeholder="Enter your password" required>
                         </div>
 
                         <div class="auth-meta">
@@ -84,6 +84,7 @@
         <script>
             const tabs = document.querySelectorAll('.tab');
             const forms = document.querySelectorAll('.auth-form');
+            const loginForm = document.getElementById('loginForm');
 
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
@@ -95,6 +96,47 @@
                         form.classList.toggle('is-visible', form.id === activeFormId);
                     });
                 });
+            });
+
+            loginForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const email = document.getElementById('login-email').value.trim();
+                const password = document.getElementById('login-password').value.trim();
+
+                if (!email || !password) {
+                    alert('Please enter both your email and password.');
+                    return;
+                }
+
+                try {
+                    const response = await fetch('../logindata.csv');
+                    if (!response.ok) {
+                        throw new Error('Unable to read login data file.');
+                    }
+
+                    const csvText = await response.text();
+                    const rows = csvText
+                        .split(/\r?\n/)
+                        .map(line => line.trim())
+                        .filter(line => line.length > 0);
+
+                    const foundUser = rows.some(line => {
+                        const [storedEmail, ...storedPasswordParts] = line.split(',');
+                        const storedPassword = storedPasswordParts.join(',').trim();
+                        return storedEmail && storedEmail.trim().toLowerCase() === email.toLowerCase() && storedPassword === password;
+                    });
+
+                    if (foundUser) {
+                        alert('Login successful!');
+                        window.location.href = '../';
+                    } else {
+                        alert('No account matches that email and password. Please check your details or sign up first.');
+                    }
+                } catch (error) {
+                    console.error('Login check failed:', error);
+                    alert('There was a problem checking your login details. Please try again later.');
+                }
             });
         </script>
     </body>
