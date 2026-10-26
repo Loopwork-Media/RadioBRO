@@ -1,85 +1,61 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>Home|RadioBRO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RadioBRO | Home</title>
         <link rel="stylesheet" href="styles.css">
     </head>
-
     <body>
-        <ul>
-            <li><a href="./">Home</a></li>
-            <li><a href="about/">About</a></li>
-            <li><a href="contact/">Contact</a></li>
-        </ul>
+        <nav class="topbar">
+            <div class="brand">RadioBRO</div>
+            <div class="nav-links">
+                <a class="active" href="./">Home</a>
+                <a href="about/">About</a>
+                <a href="contact/">Contact</a>
+            </div>
+        </nav>
 
-        <header style="
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        ">
-            <video
-                autoplay
-                muted
-                loop
-                playsinline
-                style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    z-index: 0;
-                "
-            >
+        <header class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
                 <source src="untitled design.mp4" type="video/mp4">
-                Your browser does not support background video.
             </video>
-
-            <div style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.4);
-                z-index: 1;
-            "></div>
-
-            <h1 style="
-                position: relative;
-                z-index: 2;
-                margin: 0;
-                font-size: 2.5rem;
-            ">
-                Welcome To RadioBRO.
-            </h1>
-
-            <h2 class="slogan" style="
-                position: relative;
-                z-index: 2;
-                margin: 5px 0 0;
-                color: red;
-                font-size: 1.6rem;
-            ">
-                Free Online Radio Broadcasting
-            </h2>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="eyebrow">Broadcast anywhere, anytime</p>
+                <h1>Welcome To RadioBRO.</h1>
+                <h2 class="tagline">Free Online Radio Broadcasting</h2>
+                <div class="cta-row">
+                    <a class="primary-btn" href="contact/">Get Started</a>
+                    <a class="secondary-btn" href="about/">Learn More</a>
+                </div>
+            </div>
         </header>
 
-        <h3 style="
-            text-align: center;
-            color: #173868
-;
-        ">
-            Welcome to RadioBRO, We're so pleased that you're here!
-        </h3>
-        <p style='text-align:center; font-size: 1.2rem;'>If you have an account, please sign in, if not, then read on.</p>
-        <button>Login</button>
-        <button onclick="alert('Hello')">Hi</button>
+        <main class="page-shell">
+            <section class="intro-block">
+                <p class="section-label">Your streaming home</p>
+                <h3>Welcome to RadioBRO, where we make online radio simple, social, and exciting.</h3>
+                <p>If you have an account, please sign in. If not, explore the platform and discover what RadioBRO has to offer.</p>
+            </section>
+
+            <section class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">01</div>
+                    <h4>Live Listening</h4>
+                    <p>Enjoy seamless online radio experiences with a clean, listener-first interface designed for everyday engagement.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">02</div>
+                    <h4>Easy Access</h4>
+                    <p>Move between shows, genres, and content with no clutter and no confusion.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">03</div>
+                    <h4>Community</h4>
+                    <p>Build a vibrant audience around music, talk, culture, and shared listening experiences.</p>
+                </article>
+            </section>
+        </main>
     </body>
 </html>

@@ -1,85 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>About-RadioBRO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About | RadioBRO</title>
         <link rel="stylesheet" href="../styles.css">
     </head>
-
     <body>
-        <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="./">About</a></li>
-            <li><a href="../contact/">Contact</a></li>
-        </ul>
+        <nav class="topbar">
+            <div class="brand">RadioBRO</div>
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a class="active" href="./">About</a>
+                <a href="../contact/">Contact</a>
+            </div>
+        </nav>
 
-        <header style="
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        ">
-            <video
-                autoplay
-                muted
-                loop
-                playsinline
-                style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    z-index: 0;
-                "
-            >
+        <header class="hero about-hero">
+            <video class="hero-video" autoplay muted loop playsinline>
                 <source src="../untitled design.mp4" type="video/mp4">
-                Your browser does not support background video.
             </video>
-
-            <div style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.4);
-                z-index: 1;
-            "></div>
-
-            <h1 style="
-                position: relative;
-                z-index: 2;
-                margin: 0;
-                font-size: 2.5rem;
-            ">
-                About RadioBRO.
-            </h1>
-
-            <h2 class="slogan" style="
-                position: relative;
-                z-index: 2;
-                margin: 5px 0 0;
-                color: red;
-                font-size: 1.3rem;
-            ">
-                Free Online Radio Broadcasting
-            </h2>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="eyebrow">About the brand</p>
+                <h1>About RadioBRO.</h1>
+                <h2 class="tagline">Free Online Radio Broadcasting</h2>
+            </div>
         </header>
 
-        <h3 style="
-            text-align: center;
-            color: #173868
-;
-        ">
-            Hello!
-        </h3>
-        <p> RadioBRO is a free online software that allows users to find the joy of using online radio. It was set up in October, 2026 by Ben Gage and got it's name from Ben writing RadioBROardcast. </p>
-        <button>Login</button>
-        <button onclick="alert('Hello')">Hi</button>
+        <main class="page-shell">
+            <section class="story-block">
+                <div class="section-copy">
+                    <p class="section-label">Our story</p>
+                    <h3>RadioBRO was created to bring the joy of online radio to listeners everywhere.</h3>
+                </div>
+                <p>RadioBRO is a free online platform designed to help people discover and enjoy streaming radio content through a clean, accessible experience. The concept began in October 2026 and was developed around the idea of making broadcasting approachable, modern, and genuinely enjoyable.</p>
+            </section>
+
+            <section class="feature-grid two-col">
+                <article class="info-card">
+                    <h4>Built for listeners</h4>
+                    <p>We believe radio should feel effortless, social, and exciting—whether you are listening solo or sharing the moment with others.</p>
+                </article>
+                <article class="info-card">
+                    <h4>Focused on access</h4>
+                    <p>Our platform keeps the experience lightweight, mobile-friendly, and easy to navigate across devices and screens.</p>
+                </article>
+            </section>
+        </main>
     </body>
 </html>
