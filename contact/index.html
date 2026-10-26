@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Contact-RadioBRO</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+
+    <body>
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../about/">About</a></li>
+            <li><a href="./">Contact</a></li>
+        </ul>
+
+        <header style="
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        ">
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+                style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: 0;
+                "
+            >
+                <source src="../contact.mp4" type="video/mp4">
+                Your browser does not support background video.
+            </video>
+
+            <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                z-index: 1;
+            "></div>
+
+            <h1 style="
+                position: relative;
+                z-index: 2;
+                margin: 0;
+                font-size: 2.5rem;
+            ">
+                Contact RadioBRO.
+            </h1>
+
+            <h2 class="slogan" style="
+                position: relative;
+                z-index: 2;
+                margin: 5px 0 0;
+                color: red;
+                font-size: 1.3rem;
+            ">
+                Free Online Radio Broadcasting
+            </h2>
+        </header>
+
+        <h3 style="
+            text-align: center;
+            color: #173868
+;
+        ">
+            Hello!
+        </h3>
+        <p> Want to get in touch with RadioBRO? Use the contact form, email us, or follow our updates. </p>
+        <button>Login</button>
+        <button onclick="alert('Hello')">Hi</button>
+    </body>
+</html>
