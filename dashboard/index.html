@@ -18,18 +18,11 @@
                 --accent: #d72638;
                 --accent-soft: #ffe9ec;
                 --accent-2: #ff9a8b;
-                --success: #1d9d6c;
                 --shadow: 0 22px 50px rgba(9, 18, 30, 0.12);
             }
 
-            * {
-                box-sizing: border-box;
-            }
-
-            html {
-                scroll-behavior: smooth;
-            }
-
+            * { box-sizing: border-box; }
+            html { scroll-behavior: smooth; }
             body {
                 margin: 0;
                 font-family: Arial, Helvetica, sans-serif;
@@ -38,13 +31,8 @@
                 line-height: 1.5;
             }
 
-            a {
-                text-decoration: none;
-            }
-
-            button, select {
-                font: inherit;
-            }
+            a { text-decoration: none; }
+            button, select, input { font: inherit; }
 
             .topbar {
                 position: sticky;
@@ -89,9 +77,7 @@
                 color: #fff;
             }
 
-            .user-menu {
-                position: relative;
-            }
+            .user-menu { position: relative; }
 
             .menu-trigger {
                 display: inline-flex;
@@ -132,9 +118,7 @@
                 z-index: 50;
             }
 
-            .dropdown-panel.is-open {
-                display: grid;
-            }
+            .dropdown-panel.is-open { display: grid; }
 
             .dropdown-panel a,
             .dropdown-panel button {
@@ -212,9 +196,7 @@
                 font-size: 0.8rem;
             }
 
-            .side-group {
-                margin-top: 1rem;
-            }
+            .side-group { margin-top: 1rem; }
 
             .side-menu {
                 width: 100%;
@@ -231,9 +213,7 @@
                 cursor: pointer;
             }
 
-            .side-menu:hover {
-                background: rgba(17,24,39,0.03);
-            }
+            .side-menu:hover { background: rgba(17,24,39,0.03); }
 
             .sub-menu {
                 display: grid;
@@ -255,10 +235,7 @@
                 color: var(--navy);
             }
 
-            .main-panel {
-                display: grid;
-                gap: 1.3rem;
-            }
+            .main-panel { display: grid; gap: 1.3rem; }
 
             .welcome-panel {
                 border-radius: 30px;
@@ -351,10 +328,7 @@
                 background: linear-gradient(180deg, transparent, rgba(9,18,30,0.72));
             }
 
-            .now-playing > * {
-                position: relative;
-                z-index: 1;
-            }
+            .now-playing > * { position: relative; z-index: 1; }
 
             .now-playing h2 {
                 margin: 0;
@@ -363,9 +337,7 @@
                 letter-spacing: -0.05em;
             }
 
-            .now-playing .section-label {
-                color: #ffd6dc;
-            }
+            .now-playing .section-label { color: #ffd6dc; }
 
             .track-meta {
                 display: flex;
@@ -398,16 +370,10 @@
                 box-shadow: 0 18px 28px rgba(215, 38, 56, 0.4);
                 cursor: pointer;
                 margin-top: 1rem;
+                opacity: 0.9;
             }
 
-            .play-button[data-audio-control="true"] {
-                opacity: 0.75;
-            }
-
-            .mini-stats {
-                display: grid;
-                gap: 1rem;
-            }
+            .mini-stats { display: grid; gap: 1rem; }
 
             .stat-card {
                 border-radius: 22px;
@@ -436,19 +402,13 @@
                 font-size: 0.9rem;
             }
 
-            .stats-grid,
-            .content-grid {
+            .stats-grid, .content-grid {
                 display: grid;
                 gap: 1rem;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-
-            .content-grid {
-                grid-template-columns: 1.2fr 1fr;
-            }
+            .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .content-grid { grid-template-columns: 1.2fr 1fr; }
 
             .panel-card {
                 border-radius: 24px;
@@ -462,10 +422,7 @@
                 margin-bottom: 1rem;
             }
 
-            .panel-header h3 {
-                margin: 0;
-                font-size: 1.15rem;
-            }
+            .panel-header h3 { margin: 0; font-size: 1.15rem; }
 
             .chip-link {
                 color: var(--accent);
@@ -475,8 +432,7 @@
                 text-transform: uppercase;
             }
 
-            .station-list,
-            .playlist-list {
+            .station-list, .playlist-list {
                 list-style: none;
                 padding: 0;
                 margin: 0;
@@ -484,8 +440,7 @@
                 gap: 0.8rem;
             }
 
-            .station-item,
-            .playlist-item {
+            .station-item, .playlist-item {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -496,16 +451,14 @@
                 padding: 0.8rem 0.9rem;
             }
 
-            .station-name,
-            .playlist-name {
+            .station-name, .playlist-name {
                 display: flex;
                 align-items: center;
                 gap: 0.7rem;
                 font-weight: 700;
             }
 
-            .station-dot,
-            .playlist-dot {
+            .station-dot, .playlist-dot {
                 width: 12px;
                 height: 12px;
                 border-radius: 50%;
@@ -513,8 +466,7 @@
                 box-shadow: 0 0 0 5px rgba(215, 38, 56, 0.08);
             }
 
-            .station-meta,
-            .playlist-meta {
+            .station-meta, .playlist-meta {
                 color: var(--muted);
                 font-size: 0.76rem;
                 font-weight: 800;
@@ -522,46 +474,102 @@
                 text-transform: uppercase;
             }
 
-            .action-btn {
+            .secret-badge {
                 display: inline-flex;
                 align-items: center;
-                justify-content: center;
-                padding: 0.7rem 1.1rem;
-                border: 0;
-                border-radius: 12px;
-                background: linear-gradient(135deg, var(--navy-soft), #2d4f7a);
-                color: #fff;
-                cursor: pointer;
+                gap: 0.4rem;
+                border-radius: 999px;
+                padding: 0.45rem 0.8rem;
+                background: rgba(29,157,108,0.1);
+                color: #0d6f46;
+                font-size: 0.75rem;
                 font-weight: 800;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
             }
 
-            .action-btn.secondary {
-                background: var(--accent-soft);
+            .secret-modal-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(8, 16, 25, 0.5);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+                padding: 1rem;
+            }
+
+            .secret-modal-backdrop.is-open { display: flex; }
+
+            .secret-modal {
+                width: min(420px, 100%);
+                background: white;
+                border-radius: 24px;
+                box-shadow: 0 32px 52px rgba(0,0,0,0.2);
+                padding: 1.5rem;
+            }
+
+            .secret-modal h3 {
+                margin: 0 0 0.5rem;
+                color: var(--navy);
+                font-size: 1.5rem;
+            }
+
+            .secret-modal p {
+                margin: 0 0 1rem;
+                color: var(--muted);
+            }
+
+            .secret-modal label {
+                display: block;
+                margin-bottom: 0.45rem;
+                color: var(--navy);
+                font-weight: 700;
+            }
+
+            .secret-modal input {
+                width: 100%;
+                border: 1px solid rgba(17,24,39,0.12);
+                border-radius: 12px;
+                padding: 0.9rem 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .secret-actions {
+                display: flex;
+                justify-content: flex-end;
+                gap: 0.7rem;
+            }
+
+            .ghost-btn,
+            .danger-btn {
+                border: 0;
+                border-radius: 12px;
+                padding: 0.8rem 1rem;
+                font-weight: 800;
+                cursor: pointer;
+            }
+
+            .ghost-btn {
+                background: #edf3ff;
                 color: var(--navy);
             }
 
-            .dashboard-section {
-                scroll-margin-top: 5rem;
+            .danger-btn {
+                background: linear-gradient(135deg, var(--accent), var(--accent-2));
+                color: #fff;
             }
 
             @media (max-width: 980px) {
-                .dashboard-shell {
-                    grid-template-columns: 1fr;
-                }
+                .dashboard-shell { grid-template-columns: 1fr; }
             }
 
             @media (max-width: 760px) {
-                .welcome-panel,
-                .hero-panel,
-                .stats-grid,
-                .content-grid {
+                .welcome-panel, .hero-panel, .stats-grid, .content-grid {
                     grid-template-columns: 1fr;
                     display: grid;
                 }
-
-                .welcome-panel {
-                    padding: 1.25rem;
-                }
+                .welcome-panel { padding: 1.25rem; }
             }
 
             @media (max-width: 540px) {
@@ -582,17 +590,9 @@
                     margin-top: 1.2rem;
                 }
 
-                .sidebar,
-                .panel-card,
-                .welcome-panel,
-                .hero-panel {
-                    padding: 1rem;
-                }
+                .sidebar, .panel-card, .welcome-panel, .hero-panel { padding: 1rem; }
 
-                .quick-actions {
-                    width: 100%;
-                    justify-content: flex-start;
-                }
+                .quick-actions { width: 100%; justify-content: flex-start; }
             }
         </style>
     </head>
@@ -607,14 +607,15 @@
             </div>
             <div class="user-menu">
                 <button class="menu-trigger" type="button" data-toggle="profileMenu">
-                    <span class="avatar" id="miniAvatar">A</span>
-                    <span id="topUserName">User</span>
+                    <span class="avatar" id="miniAvatar">G</span>
+                    <span id="topUserName">Guest</span>
                     <span>▾</span>
                 </button>
                 <div class="dropdown-panel" id="profileMenu">
                     <a href="#profile">Profile</a>
                     <a href="#saved-stations">Saved stations</a>
                     <a href="#listening-history">Listening history</a>
+                    <button type="button" id="secretBtn">GitHub secret</button>
                     <button type="button" id="signOutBtn">Sign out</button>
                 </div>
             </div>
@@ -668,10 +669,10 @@
             </aside>
 
             <section class="main-panel" id="dashboard">
-                <header class="welcome-panel dashboard-section">
+                <header class="welcome-panel">
                     <div>
                         <p class="section-label">Good evening</p>
-                        <h1 id="welcomeName">Welcome back.</h1>
+                        <h1 id="welcomeName">Welcome back, Guest.</h1>
                     </div>
                     <div class="quick-actions">
                         <label class="pill-field">
@@ -694,7 +695,7 @@
                     </div>
                 </header>
 
-                <section class="hero-panel dashboard-section">
+                <section class="hero-panel">
                     <div class="now-playing">
                         <p class="section-label">Now playing</p>
                         <h2 id="stationTitle">Midnight Echoes</h2>
@@ -702,8 +703,9 @@
                         <div class="track-meta">
                             <span class="track-badge">Live</span>
                             <span class="track-badge" id="genreBadge">Synthwave</span>
+                            <span class="secret-badge" id="secretStatus">No secret stored</span>
                         </div>
-                        <button class="play-button" type="button" data-audio-control="true" aria-label="Play audio">▶</button>
+                        <button class="play-button" type="button" aria-label="Play audio">▶</button>
                     </div>
 
                     <div class="mini-stats">
@@ -721,7 +723,7 @@
                 </section>
 
                 <section class="stats-grid">
-                    <article class="panel-card dashboard-section" id="profile">
+                    <article class="panel-card" id="profile">
                         <div class="panel-header">
                             <h3>Profile</h3>
                             <a class="chip-link" href="#">Edit</a>
@@ -729,11 +731,11 @@
                         <ul class="station-list">
                             <li class="station-item">
                                 <div class="station-name"><span class="station-dot"></span> Name</div>
-                                <span class="station-meta" id="profileName">User</span>
+                                <span class="station-meta" id="profileName">Guest</span>
                             </li>
                             <li class="station-item">
                                 <div class="station-name"><span class="station-dot"></span> Email</div>
-                                <span class="station-meta" id="profileEmail">user@example.com</span>
+                                <span class="station-meta" id="profileEmail">guest@radio.com</span>
                             </li>
                             <li class="station-item">
                                 <div class="station-name"><span class="station-dot"></span> Listening mode</div>
@@ -742,45 +744,27 @@
                         </ul>
                     </article>
 
-                    <article class="panel-card dashboard-section" id="saved-stations">
+                    <article class="panel-card" id="saved-stations">
                         <div class="panel-header">
                             <h3>Saved stations</h3>
                             <a class="chip-link" href="#">Manage</a>
                         </div>
                         <ul class="station-list">
-                            <li class="station-item">
-                                <div class="station-name"><span class="station-dot"></span> Sunset FM</div>
-                                <span class="station-meta">Saved</span>
-                            </li>
-                            <li class="station-item">
-                                <div class="station-name"><span class="station-dot"></span> Neon Nights</div>
-                                <span class="station-meta">Saved</span>
-                            </li>
-                            <li class="station-item">
-                                <div class="station-name"><span class="station-dot"></span> Earth &amp; Echo</div>
-                                <span class="station-meta">Saved</span>
-                            </li>
+                            <li class="station-item"><div class="station-name"><span class="station-dot"></span> Sunset FM</div><span class="station-meta">Saved</span></li>
+                            <li class="station-item"><div class="station-name"><span class="station-dot"></span> Neon Nights</div><span class="station-meta">Saved</span></li>
+                            <li class="station-item"><div class="station-name"><span class="station-dot"></span> Earth &amp; Echo</div><span class="station-meta">Saved</span></li>
                         </ul>
                     </article>
 
-                    <article class="panel-card dashboard-section" id="listening-history">
+                    <article class="panel-card" id="listening-history">
                         <div class="panel-header">
                             <h3>Listening history</h3>
                             <a class="chip-link" href="#">Clear</a>
                         </div>
                         <ul class="station-list">
-                            <li class="station-item">
-                                <div class="station-name"><span class="station-dot"></span> Afterglow</div>
-                                <span class="station-meta">02:41</span>
-                            </li>
-                            <li class="station-item">
-                                <div class="station-name"><span class="station-dot"></span> Blue Hour</div>
-                                <span class="station-meta">04:19</span>
-                            </li>
-                            <li class="station-item">
-                                <div class="station-name"><span class="station-dot"></span> Harbor Lights</div>
-                                <span class="station-meta">03:08</span>
-                            </li>
+                            <li class="station-item"><div class="station-name"><span class="station-dot"></span> Afterglow</div><span class="station-meta">02:41</span></li>
+                            <li class="station-item"><div class="station-name"><span class="station-dot"></span> Blue Hour</div><span class="station-meta">04:19</span></li>
+                            <li class="station-item"><div class="station-name"><span class="station-dot"></span> Harbor Lights</div><span class="station-meta">03:08</span></li>
                         </ul>
                     </article>
                 </section>
@@ -792,18 +776,9 @@
                             <a href="#" class="chip-link">Open</a>
                         </div>
                         <ul class="playlist-list">
-                            <li class="playlist-item">
-                                <div class="playlist-name"><span class="playlist-dot"></span> Chill Morning</div>
-                                <span class="playlist-meta">12 tracks</span>
-                            </li>
-                            <li class="playlist-item">
-                                <div class="playlist-name"><span class="playlist-dot"></span> Late Night Drive</div>
-                                <span class="playlist-meta">9 tracks</span>
-                            </li>
-                            <li class="playlist-item">
-                                <div class="playlist-name"><span class="playlist-dot"></span> City Lights</div>
-                                <span class="playlist-meta">15 tracks</span>
-                            </li>
+                            <li class="playlist-item"><div class="playlist-name"><span class="playlist-dot"></span> Chill Morning</div><span class="playlist-meta">12 tracks</span></li>
+                            <li class="playlist-item"><div class="playlist-name"><span class="playlist-dot"></span> Late Night Drive</div><span class="playlist-meta">9 tracks</span></li>
+                            <li class="playlist-item"><div class="playlist-name"><span class="playlist-dot"></span> City Lights</div><span class="playlist-meta">15 tracks</span></li>
                         </ul>
                     </article>
 
@@ -813,77 +788,144 @@
                             <a href="#" class="chip-link">History</a>
                         </div>
                         <ul class="playlist-list">
-                            <li class="playlist-item">
-                                <div class="playlist-name"><span class="playlist-dot"></span> Velvet Room</div>
-                                <span class="playlist-meta">Today</span>
-                            </li>
-                            <li class="playlist-item">
-                                <div class="playlist-name"><span class="playlist-dot"></span> Rooftop Session</div>
-                                <span class="playlist-meta">Yesterday</span>
-                            </li>
-                            <li class="playlist-item">
-                                <div class="playlist-name"><span class="playlist-dot"></span> Atlantic Drift</div>
-                                <span class="playlist-meta">2d ago</span>
-                            </li>
+                            <li class="playlist-item"><div class="playlist-name"><span class="playlist-dot"></span> Velvet Room</div><span class="playlist-meta">Today</span></li>
+                            <li class="playlist-item"><div class="playlist-name"><span class="playlist-dot"></span> Rooftop Session</div><span class="playlist-meta">Yesterday</span></li>
+                            <li class="playlist-item"><div class="playlist-name"><span class="playlist-dot"></span> Atlantic Drift</div><span class="playlist-meta">2d ago</span></li>
                         </ul>
                     </article>
                 </section>
             </section>
         </main>
 
-        <script>
-            const sessionKey = 'radioUser';
+        <div class="secret-modal-backdrop" id="secretModal" aria-hidden="true">
+            <div class="secret-modal" role="dialog" aria-modal="true" aria-labelledby="secretTitle">
+                <h3 id="secretTitle">Enter your GitHub secret</h3>
+                <p>For testing only. This is stored in your browser and never shown in the page UI.</p>
+                <label for="secretInput">Secret</label>
+                <input id="secretInput" type="password" placeholder="Paste your GitHub secret here" autocomplete="off">
+                <div class="secret-actions">
+                    <button class="ghost-btn" type="button" id="skipSecretBtn">Maybe later</button>
+                    <button class="danger-btn" type="button" id="saveSecretBtn">Save secret</button>
+                </div>
+            </div>
+        </div>
 
-            function readSession() {
+        <script>
+            const SESSION_KEY = 'radiobro_user';
+            const SECRET_KEY = 'radiobro_github_secret';
+
+            function getStoredUser() {
                 try {
-                    return JSON.parse(localStorage.getItem(sessionKey));
+                    return JSON.parse(localStorage.getItem(SESSION_KEY)) || null;
                 } catch (error) {
                     return null;
                 }
             }
 
-            function writeSession(user) {
-                localStorage.setItem(sessionKey, JSON.stringify(user));
+            function setStoredUser(user) {
+                localStorage.setItem(SESSION_KEY, JSON.stringify(user));
             }
 
-            function clearSession() {
-                localStorage.removeItem(sessionKey);
+            function getSecret() {
+                return localStorage.getItem(SECRET_KEY) || '';
             }
 
-            function applyUserInfo(user) {
-                if (!user) {
-                    window.location.href = '../login/';
+            function setSecret(secret) {
+                if (!secret) {
+                    localStorage.removeItem(SECRET_KEY);
+                    return;
+                }
+                localStorage.setItem(SECRET_KEY, secret);
+            }
+
+            function updateUserUI(user) {
+                const name = user && user.name ? user.name : 'Guest';
+                const initials = name.split(' ').map(part => part.charAt(0)).slice(0, 2).join('').toUpperCase() || 'G';
+
+                document.getElementById('topUserName').textContent = name;
+                document.getElementById('miniAvatar').textContent = initials;
+                document.getElementById('welcomeName').textContent = `Welcome back, ${name}.`;
+                document.getElementById('profileName').textContent = name;
+                document.getElementById('profileEmail').textContent = user && user.email ? user.email : 'guest@radio.com';
+            }
+
+            function syncSecretStatus() {
+                const hasSecret = !!getSecret();
+                const badge = document.getElementById('secretStatus');
+                badge.textContent = hasSecret ? 'Secret saved' : 'No secret stored';
+                badge.style.background = hasSecret ? 'rgba(29,157,108,0.1)' : 'rgba(17,24,39,0.05)';
+                badge.style.color = hasSecret ? '#0d6f46' : '#53677d';
+            }
+
+            function showSecretModal() {
+                const modal = document.getElementById('secretModal');
+                const input = document.getElementById('secretInput');
+                input.value = getSecret();
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                input.focus();
+            }
+
+            function closeSecretModal() {
+                const modal = document.getElementById('secretModal');
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+            }
+
+            const storedUser = getStoredUser();
+            if (storedUser) {
+                setStoredUser(storedUser);
+            }
+            updateUserUI(storedUser);
+            syncSecretStatus();
+
+            if (!getSecret()) {
+                showSecretModal();
+            }
+
+            document.getElementById('saveSecretBtn').addEventListener('click', () => {
+                const secret = document.getElementById('secretInput').value.trim();
+                if (!secret) {
+                    alert('Please enter your secret before saving it.');
                     return;
                 }
 
-                const displayName = user.name || 'User';
-                const initials = displayName.split(' ').map(part => part.charAt(0)).slice(0, 2).join('').toUpperCase() || 'U';
+                setSecret(secret);
+                window.RADIOBRO_GITHUB_SECRET = secret;
+                syncSecretStatus();
+                closeSecretModal();
+            });
 
-                document.getElementById('topUserName').textContent = displayName;
-                document.getElementById('miniAvatar').textContent = initials;
-                document.getElementById('welcomeName').textContent = `Welcome back, ${displayName}.`;
-                document.getElementById('profileName').textContent = displayName;
-                document.getElementById('profileEmail').textContent = user.email || 'user@example.com';
-            }
+            document.getElementById('skipSecretBtn').addEventListener('click', () => {
+                closeSecretModal();
+            });
 
-            const currentUser = readSession();
-            applyUserInfo(currentUser);
+            document.getElementById('secretBtn').addEventListener('click', () => {
+                showSecretModal();
+            });
+
+            document.getElementById('signOutBtn').addEventListener('click', () => {
+                localStorage.removeItem(SESSION_KEY);
+                updateUserUI(null);
+                document.getElementById('topUserName').textContent = 'Guest';
+                document.getElementById('profileName').textContent = 'Guest';
+                document.getElementById('profileEmail').textContent = 'guest@radio.com';
+                document.getElementById('welcomeName').textContent = 'Welcome back, Guest.';
+            });
 
             document.getElementById('stationSelector').addEventListener('change', function () {
                 const selected = this.value;
-                const title = document.getElementById('stationTitle');
                 if (selected !== 'All genres') {
-                    title.textContent = selected;
+                    document.getElementById('stationTitle').textContent = selected;
                     document.getElementById('genreBadge').textContent = selected;
                 } else {
-                    title.textContent = 'Midnight Echoes';
+                    document.getElementById('stationTitle').textContent = 'Midnight Echoes';
                     document.getElementById('genreBadge').textContent = 'Synthwave';
                 }
             });
 
             document.getElementById('modeSelector').addEventListener('change', function () {
-                const value = this.value;
-                document.getElementById('profileMode').textContent = value;
+                document.getElementById('profileMode').textContent = this.value;
             });
 
             document.querySelectorAll('[data-toggle]').forEach(button => {
@@ -901,23 +943,11 @@
                 document.querySelectorAll('.dropdown-panel').forEach(panel => panel.classList.remove('is-open'));
             });
 
-            document.getElementById('signOutBtn').addEventListener('click', () => {
-                clearSession();
-                window.location.href = '../login/';
+            document.querySelector('.play-button').addEventListener('click', () => {
+                alert('Audio controls are placeholders in the demo version.');
             });
 
-            document.querySelectorAll('.chip-link, .sub-menu a, .nav-links a').forEach(link => {
-                link.addEventListener('click', function () {
-                    document.querySelectorAll('.nav-links a, .sub-menu a').forEach(item => item.classList.remove('active'));
-                    if (this.classList.contains('nav-links')) {
-                        this.classList.add('active');
-                    }
-                });
-            });
-
-            document.querySelector('.play-button').addEventListener('click', function () {
-                alert('Audio player controls are still placeholders for now.');
-            });
+            window.RADIOBRO_GITHUB_SECRET = getSecret();
         </script>
     </body>
 </html>
